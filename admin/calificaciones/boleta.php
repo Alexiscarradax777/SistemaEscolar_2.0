@@ -33,6 +33,7 @@ $id_estudiante = $_GET['id'];
 $id_estudiante_get = $_GET['id'];
 
 
+
 include('../../app/config.php');
 require_once('../../public/TCPDF-main/tcpdf.php');
 include_once('../../app/controllers/configuraciones/institucion/listado_de_instituciones.php');

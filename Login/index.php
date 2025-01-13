@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="<?= APP_URL; ?>/public/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= APP_URL; ?>/public/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="<?= APP_URL; ?>/public/dist/css/login.css">
     <!-- Sweetalert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -25,7 +26,7 @@
     <div class="login-box">
         <br>
         <center>
-            <img src="https://img.freepik.com/free-vector/login-concept-illustration_114360-739.jpg?w=740&t=st=1711127877~exp=1711128477~hmac=99db5b691b2035ebe2972a0b9d0901b01c5e1829289223eef6c8a6b85bc4d16b" width="150px" alt="">
+            <img src="../public/dist/img/logo/logoblanco.png" width="150px" alt="">
             <br>
             <br>
         </center>
@@ -37,7 +38,6 @@
         <div class="card">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Inicio de Sesion</p>
-                <hr>
 
                 <form action="controller_login.php" method="post">
                     <div class="input-group mb-3">

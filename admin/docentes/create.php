@@ -45,8 +45,8 @@ include('../../app/controllers/roles/listado_de_roles.php'); // incluye los dato
                                                     }
                                                     ?>
                                                 </select>
-                                                <a href="<?= APP_URL; ?>/admin/roles/create.php" style="margin-left: 2px" class="btn btn-primary "><i class="bi bi-file-plus"></i>
-                                                </a>
+                                                <!--  <a href="<?= APP_URL; ?>/admin/roles/create.php" style="margin-left: 2px" class="btn btn-primary "><i class="bi bi-file-plus"></i>
+                                                </a> -->
                                             </div>
                                         </div>
                                     </div>

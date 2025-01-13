@@ -131,20 +131,14 @@ foreach ($estudiantes as $estudiante) {
             </div>
 
             <div class="row">
-                <div class="col-md-12" style="align-items: center;">
+                <div class="col-md-12 d-flex justify-content-center">
                     <div class="card card-outline card-primary">
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="boleta.php?id=<?= $id_estudiante_get; ?>" type="button" class="btn btn-warning btn-sm"><i class="bi bi-printer"></i></a> <!--EN ESTE BOTON LLEVAMOS EL ID DEL ESTUDIANTE  -->
+                            <a href="boleta.php?id=<?= $id_estudiante_get; ?>" type="button" class="btn btn-warning btn-sm"><i class="bi bi-printer"></i></a>
                         </div>
                     </div>
                 </div>
-
             </div>
-
-
-
-
-
 
         </div>
 

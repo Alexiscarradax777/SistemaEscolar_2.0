@@ -47,7 +47,7 @@ include('../../app/controllers/grados/listado_de_grados.php');
                                                     }
                                                     ?>
                                                 </select>
-                                                <a href="<?= APP_URL; ?>/admin/roles/create.php" style="margin-left: 2px" class="btn btn-primary "><i class="bi bi-file-plus"></i></a>
+                                                <!-- <a href="<?= APP_URL; ?>/admin/roles/create.php" style="margin-left: 2px" class="btn btn-primary "><i class="bi bi-file-plus"></i></a> -->
                                             </div>
                                         </div>
                                     </div>

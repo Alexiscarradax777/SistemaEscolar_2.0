@@ -106,11 +106,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <a href="<?= APP_URL; ?>/admin" class="nav-link"><?= APP_NAME; ?></a>
                 </li>
             </ul>
-
-            <!-- Right navbar links -->
+            <!-- 
+               // Right navbar links 
             <ul class="navbar-nav ml-auto">
 
-                <!-- Notifications Dropdown Menu -->
+                // Notifications Dropdown Menu 
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="far fa-bell"></i>
@@ -147,7 +147,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <i class="fas fa-th-large"></i>
                     </a>
                 </li>
-            </ul>
+            </ul> -->
         </nav>
         <!-- /.navbar -->
 
@@ -162,12 +162,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex justify-content-center"> <!-- d-flex contenedor flexible justify centra el contenido -->
+                    <!-- <div class="image">
                         <img src="<?= APP_URL; ?>/public/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-                    </div>
+                    </div> -->
                     <div class="info">
-                        <a href="#" class="d-block"><?= $nombre_sesion_usuarios;  ?></a>
+                        <a href="#" class="d-block"><?= $nombre_sesion_usuarios; ?></a>
                     </div>
                 </div>
 

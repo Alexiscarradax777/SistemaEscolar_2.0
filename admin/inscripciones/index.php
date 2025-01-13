@@ -34,18 +34,6 @@ include('../../admin/layout/parte1.php');
 
                 </div>
 
-                <!--  <div class="col-md-3 col-sm-6 col-12">
-                    <div class="info-box">
-                        <span class="info-box-icon bg-success"><i class="bi bi-person-plus"></i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Importar Estudiantes</span>
-                            <a href="importar" class="btn btn-primary btn-ms">Importar</a>
-                        </div>
-
-                    </div>
-
-                </div> -->
-
 
             </div>
 
