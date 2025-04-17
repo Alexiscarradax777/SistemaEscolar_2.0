@@ -14,7 +14,7 @@ include('../../app/controllers/usuarios/listado_de_usuarios.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <div class="col-md-11 mx-auto">
+                <div class="col-md-12 mx-auto">
                     <h1>Listado de Usuarios</h1>
                 </div>
             </div>
@@ -23,7 +23,7 @@ include('../../app/controllers/usuarios/listado_de_usuarios.php');
 
             <div class="row">
                 <br>
-                <div class="col-md-11 mx-auto">
+                <div class="col-md-12 mx-auto">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Usuarios Registrados</h3>

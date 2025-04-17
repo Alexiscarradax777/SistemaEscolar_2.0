@@ -11,6 +11,7 @@ include('../../admin/layout/parte1.php');
 
 include('../../app/controllers/estudiantes/listado_de_estudiantes.php');
 include('../../app/controllers/calificaciones/listado_de_calificaciones.php');
+include('../../app/controllers/materias/listado_de_materias.php');
 
 
 
@@ -21,8 +22,20 @@ foreach ($estudiantes as $estudiante) {
     if ($id_grado_get == $estudiante['id_grado']) {
         $curso = $estudiante['curso'];
         $grupo = $estudiante['grupo'];
+        $nivel = $estudiante['nivel'];
+        $sistema = $estudiante['sistema'];
+        $turno = $estudiante['turno'];
     }
 }
+
+foreach ($materias as $materia) {
+    if ($id_materia_get == $materia['id_materia']) {
+        $nombre_materia = $materia['nombre_materia'];
+    }
+}
+
+
+
 
 ?>
 
@@ -34,8 +47,10 @@ foreach ($estudiantes as $estudiante) {
     <div class="content">
         <div class="container">
             <div class="row">
-                <div class="col-md-11 mx-auto">
-                    <h3>Listado de Estudiantes del Grado: <?= $curso; ?> del grupo <?= $grupo; ?></h3>
+                <div class="col-md-12 mx-auto">
+                    <h5><b>LISTADO DE ESTUDIANTES DE <?= $nivel; ?> <?= $curso; ?> GRUPO <?= $grupo; ?></b></h5>
+                    <h5><b><?= $sistema; ?> <?= $turno; ?></b></h5>
+                    <h5 style="text-align: center;"><b><?= $nombre_materia; ?></b></h5>
                 </div>
             </div>
             <br>
@@ -43,7 +58,7 @@ foreach ($estudiantes as $estudiante) {
 
 
             <div class="row">
-                <div class="col-md-11 mx-auto">
+                <div class="col-md-12 mx-auto">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Estudiantes Registrados</h3>
@@ -51,29 +66,18 @@ foreach ($estudiantes as $estudiante) {
                         </div>
 
                         <div class="card-body">
-                            <table id="example1" class="table table-striped table-bordered table-hover table-sm mx-auto" style="width: 900px;">
+                            <table id="example1" class="table table-striped table-bordered table-hover table-sm">
                                 <thead>
                                     <tr>
                                         <th>
                                             <center>Nro</center>
                                         </th>
                                         <th>
-                                            <center>Nombres y Apellidos</center>
+                                            <center>Nombres</center>
                                         </th>
+
                                         <th>
-                                            <center>Nivel</center>
-                                        </th>
-                                        <th>
-                                            <center>Sistema</center>
-                                        </th>
-                                        <th>
-                                            <center>Turno</center>
-                                        </th>
-                                        <th>
-                                            <center>Grado</center>
-                                        </th>
-                                        <th>
-                                            <center>Grupo</center>
+                                            <center>Apellidos</center>
                                         </th>
                                         <th>
                                             <center> 1 Calif.</center>
@@ -107,12 +111,8 @@ foreach ($estudiantes as $estudiante) {
                                                     <input type="text" id="estudiante_<?= $contador_estudiantes; ?>" value="<?= $id_estudiante; ?>" hidden> <!--Aqui pusimos un input que nos servira para el script   -->
                                                     <?= $contador_estudiantes; ?>
                                                 </td>
-                                                <td><?= $estudiante['apellidos'] . " " . $estudiante['nombres']; ?></td> <!-- concatenamos -->
-                                                <td style="text-align: center"><?= $estudiante['nivel']; ?></td>
-                                                <td style="text-align: center"><?= $estudiante['sistema']; ?></td>
-                                                <td style="text-align: center"><?= $estudiante['turno']; ?></td>
-                                                <td style="text-align: center"><?= $estudiante['curso']; ?></td>
-                                                <td style="text-align: center"><?= $estudiante['grupo']; ?></td>
+                                                <td style="text-align: center"><?= $estudiante['nombres']; ?></td> <!-- concatenamos -->
+                                                <td style="text-align: center"><?= $estudiante['apellidos']; ?></td>
                                                 <?php
                                                 $nota1 = "";
                                                 $nota2 = "";

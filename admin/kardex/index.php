@@ -26,7 +26,7 @@ include('../../app/controllers/kardex/listado_de_kardexs.php');
 
             <div class="row">
                 <br>
-                <div class="col-md-11 mx-auto">
+                <div class="col-md-12 mx-auto">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Asignaciones registradas</h3>
@@ -35,186 +35,188 @@ include('../../app/controllers/kardex/listado_de_kardexs.php');
                         </div>
 
                         <div class="card-body">
-                            <table class="table table-striped table-bordered table-hover table-sm">
-                                <thead>
-                                    <tr>
-                                        <th>
-                                            <center>Nro</center>
-                                        </th>
-                                        <th>
-                                            <center>Nivel</center>
-                                        </th>
-                                        <th>
-                                            <center>Sistema</center>
-                                        </th>
-                                        <th>
-                                            <center>Turno</center>
-                                        </th>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <center>Nro</center>
+                                            </th>
+                                            <th>
+                                                <center>Nivel</center>
+                                            </th>
+                                            <th>
+                                                <center>Sistema</center>
+                                            </th>
+                                            <th>
+                                                <center>Turno</center>
+                                            </th>
 
-                                        <th>
-                                            <center>Grado</center>
-                                        </th>
-                                        <th>
-                                            <center>Grupo</center>
-                                        </th>
-                                        <th>
-                                            <center>Materia</center>
-                                        </th>
+                                            <th>
+                                                <center>Grado</center>
+                                            </th>
+                                            <th>
+                                                <center>Grupo</center>
+                                            </th>
+                                            <th>
+                                                <center>Materia</center>
+                                            </th>
 
-                                        <th>
-                                            <center>Acciones</center>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    $contador = 0;
-                                    foreach ($asignaciones as $asignacione) {
+                                            <th>
+                                                <center>Acciones</center>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $contador = 0;
+                                        foreach ($asignaciones as $asignacione) {
 
-                                        $id_grado = $asignacione['id_grado'];  // Aqui obtengo el id_grado de la asignacion que se le otorgo al docente y 
-                                        // nos mostrara lo que seria Universidad 1 año, 2 año, etc.
+                                            $id_grado = $asignacione['id_grado'];  // Aqui obtengo el id_grado de la asignacion que se le otorgo al docente y 
+                                            // nos mostrara lo que seria Universidad 1 año, 2 año, etc.
 
-                                        if ($sesion_email == $asignacione['email']) {
-                                            $id_asignacion = $asignacione['id_asignacion'];
-                                            $docente_id = $asignacione['docente_id']; // aqui trajo docente_id de la tabla asignacione(asignaciones)
-                                            $contador = $contador + 1; ?>
+                                            if ($sesion_email == $asignacione['email']) {
+                                                $id_asignacion = $asignacione['id_asignacion'];
+                                                $docente_id = $asignacione['docente_id']; // aqui trajo docente_id de la tabla asignacione(asignaciones)
+                                                $contador = $contador + 1; ?>
 
-                                            <tr>
-                                                <td>
-                                                    <center><?= $contador; ?></center>
-                                                </td>
-                                                <td>
-                                                    <center><?= $asignacione['nivel']; ?> </center>
-                                                </td>
-                                                <td>
-                                                    <center><?= $asignacione['sistema']; ?> </center>
-                                                </td>
-                                                <td>
-                                                    <center><?= $asignacione['turno']; ?> </center>
-                                                </td>
-                                                <td>
-                                                    <center><?= $asignacione['curso']; ?> </center>
-                                                </td>
-                                                <td>
-                                                    <center><?= $asignacione['grupo']; ?> </center>
-                                                </td>
-                                                <td>
-                                                    <center><?= $asignacione['nombre_materia']; ?> </center>
-                                                </td>
-                                                <td>
-                                                    <center>
-                                                        <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal<?= $id_asignacion; ?>">
-                                                            <i class="bi bi-journal-check"></i>
-                                                            Reportar
-                                                        </a>
-                                                    </center>
-                                                    <!-- Modal -->
-                                                    <div class="modal fade" id="exampleModal<?= $id_asignacion; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header" style="background-color: red;">
-                                                                    <h5 class="modal-title" id="exampleModalLabel">Reporte del Curso <?= $asignacione['curso']; ?></h5>
-                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <form action="<?= APP_URL; ?>/app/controllers/kardex/create.php" method="post">
-                                                                        <div class="row">
-                                                                            <div class="col-md-12">
-                                                                                <div class="form-group">
+                                                <tr>
+                                                    <td>
+                                                        <center><?= $contador; ?></center>
+                                                    </td>
+                                                    <td>
+                                                        <center><?= $asignacione['nivel']; ?> </center>
+                                                    </td>
+                                                    <td>
+                                                        <center><?= $asignacione['sistema']; ?> </center>
+                                                    </td>
+                                                    <td>
+                                                        <center><?= $asignacione['turno']; ?> </center>
+                                                    </td>
+                                                    <td>
+                                                        <center><?= $asignacione['curso']; ?> </center>
+                                                    </td>
+                                                    <td>
+                                                        <center><?= $asignacione['grupo']; ?> </center>
+                                                    </td>
+                                                    <td>
+                                                        <center><?= $asignacione['nombre_materia']; ?> </center>
+                                                    </td>
+                                                    <td>
+                                                        <center>
+                                                            <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal<?= $id_asignacion; ?>">
+                                                                <i class="bi bi-journal-check"></i>
+                                                                Reportar
+                                                            </a>
+                                                        </center>
+                                                        <!-- Modal -->
+                                                        <div class="modal fade" id="exampleModal<?= $id_asignacion; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header" style="background-color: red;">
+                                                                        <h5 class="modal-title" id="exampleModalLabel">Reporte del Curso <?= $asignacione['curso']; ?></h5>
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <form action="<?= APP_URL; ?>/app/controllers/kardex/create.php" method="post">
+                                                                            <div class="row">
+                                                                                <div class="col-md-12">
+                                                                                    <div class="form-group">
 
-                                                                                    <label for="">Fecha</label>
-                                                                                    <input type="text" name="docente_id" value="<?= $docente_id; ?>" hidden>
-                                                                                    <input type="date" name="fecha" class="form-control">
+                                                                                        <label for="">Fecha</label>
+                                                                                        <input type="text" name="docente_id" value="<?= $docente_id; ?>" hidden>
+                                                                                        <input type="date" name="fecha" class="form-control">
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
-                                                                        </div>
-                                                                        <div class="row">
-                                                                            <div class="col-md-12">
-                                                                                <div class="form-group">
-                                                                                    <label for="">Estudiante</label>
-                                                                                    <select name="estudiante_id" id="" class="form-control">
-                                                                                        <?php
-                                                                                        foreach ($estudiantes as $estudiante) {
-                                                                                            if ($estudiante['id_grado'] == $asignacione['id_grado']) {
-                                                                                                $id_estudiante = $estudiante['id_estudiante']; ?>
+                                                                            <div class="row">
+                                                                                <div class="col-md-12">
+                                                                                    <div class="form-group">
+                                                                                        <label for="">Estudiante</label>
+                                                                                        <select name="estudiante_id" id="" class="form-control">
+                                                                                            <?php
+                                                                                            foreach ($estudiantes as $estudiante) {
+                                                                                                if ($estudiante['id_grado'] == $asignacione['id_grado']) {
+                                                                                                    $id_estudiante = $estudiante['id_estudiante']; ?>
 
-                                                                                                <option value="<?= $id_estudiante; ?>"><?= $estudiante['apellidos'] . " " . $estudiante['nombres']; ?></option>
+                                                                                                    <option value="<?= $id_estudiante; ?>"><?= $estudiante['apellidos'] . " " . $estudiante['nombres']; ?></option>
 
 
-                                                                                        <?php
+                                                                                            <?php
+                                                                                                }
                                                                                             }
-                                                                                        }
-                                                                                        ?>
+                                                                                            ?>
 
-                                                                                    </select>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
-                                                                        </div>
 
-                                                                        <div class="row">
-                                                                            <div class="col-md-12">
-                                                                                <div class="form-group">
-                                                                                    <label for="">Materia</label>
-                                                                                    <input type="text" class="form-control" value="<?= $asignacione['nombre_materia']; ?>" disabled>
-                                                                                    <input type="text" name="materia_id" class="form-control" value="<?= $asignacione['id_materia']; ?>" hidden> <!--aqui se pone uno doble por que el disabled no se puede para guardar en el formulario -->
+                                                                            <div class="row">
+                                                                                <div class="col-md-12">
+                                                                                    <div class="form-group">
+                                                                                        <label for="">Materia</label>
+                                                                                        <input type="text" class="form-control" value="<?= $asignacione['nombre_materia']; ?>" disabled>
+                                                                                        <input type="text" name="materia_id" class="form-control" value="<?= $asignacione['id_materia']; ?>" hidden> <!--aqui se pone uno doble por que el disabled no se puede para guardar en el formulario -->
 
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
-                                                                        </div>
 
-                                                                        <div class="row">
-                                                                            <div class="col-md-12">
-                                                                                <div class="form-group">
-                                                                                    <label for="">Observacion</label>
-                                                                                    <select name="observacion" id="" class="form-control">
-                                                                                        <option value="DISCIPLINA">DISCIPLINA</option>
-                                                                                        <option value="ASISTENCIA">ASISTENCIA</option>
-                                                                                        <option value="RENDIMIENTO ACADEMICO">RENDIMIENTO ACADEMICO</option>
-                                                                                    </select>
+                                                                            <div class="row">
+                                                                                <div class="col-md-12">
+                                                                                    <div class="form-group">
+                                                                                        <label for="">Observacion</label>
+                                                                                        <select name="observacion" id="" class="form-control">
+                                                                                            <option value="DISCIPLINA">DISCIPLINA</option>
+                                                                                            <option value="ASISTENCIA">ASISTENCIA</option>
+                                                                                            <option value="RENDIMIENTO ACADEMICO">RENDIMIENTO ACADEMICO</option>
+                                                                                        </select>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
-                                                                        </div>
 
-                                                                        <div class="row">
-                                                                            <div class="col-md-12">
-                                                                                <div class="form-group">
-                                                                                    <label for="">Nota</label>
-                                                                                    <Textarea name="nota" id="" cols="30" class="form-control" rows="3"></Textarea>
+                                                                            <div class="row">
+                                                                                <div class="col-md-12">
+                                                                                    <div class="form-group">
+                                                                                        <label for="">Nota</label>
+                                                                                        <Textarea name="nota" id="" cols="30" class="form-control" rows="3"></Textarea>
 
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
-                                                                        </div>
 
 
 
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                                        <button type="submit" class="btn btn-danger">Registrar</button>
+                                                                    </div>
+                                                                    </form>
                                                                 </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                                                    <button type="submit" class="btn btn-danger">Registrar</button>
-                                                                </div>
-                                                                </form>
                                                             </div>
                                                         </div>
-                                                    </div>
 
-                                                </td>
-
+                                                    </td>
 
 
-                                            </tr>
+
+                                                </tr>
 
 
-                                    <?php
+                                        <?php
+                                            }
                                         }
-                                    }
 
-                                    ?>
-                                </tbody>
+                                        ?>
+                                    </tbody>
 
 
-                            </table>
+                                </table>
+                            </div>
                         </div>
 
                     </div>

@@ -14,7 +14,7 @@ include('../../app/controllers/estudiantes/listado_de_estudiantes.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <div class="col-md-11 mx-auto">
+                <div class="col-md-12 mx-auto">
                     <h1>Listado de Estudiantes</h1>
                 </div>
             </div>
@@ -22,10 +22,10 @@ include('../../app/controllers/estudiantes/listado_de_estudiantes.php');
 
 
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 mx-auto">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Estudiantes Registrados</h3>
+                            <h3 class="card-title">Estudiantes <br> Registrados</h3>
                             <div class="card-tools">
                                 <a href="../inscripciones/create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Crear Nuevo Estudiante</a>
                             </div>

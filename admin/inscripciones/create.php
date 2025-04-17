@@ -273,19 +273,13 @@ include('../../app/controllers/grados/listado_de_grados.php');
                                             <input type="number" name="ref_celular" class="form-control" required>
                                         </div>
                                     </div>
-
                                 </div>
-
-
-
-
                             </div>
 
                         </div>
                     </div>
                 </div>
                 <br>
-
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
@@ -294,15 +288,7 @@ include('../../app/controllers/grados/listado_de_grados.php');
                         </div>
                     </div>
                 </div>
-
             </form>
-
-
-
-
-
-
-
         </div>
 
     </div>

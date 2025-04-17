@@ -38,9 +38,9 @@ $id_estudiante = $_GET['id_estudiante'];
                             <table id="example1" class="table table-striped table-bordered table-hover table-sm">
                                 <thead>
                                     <tr>
-                                        <th>
+                                        <!-- <th>
                                             <center>Nro</center>
-                                        </th>
+                                        </th> -->
 
                                         <th>
                                             <center>Materia</center>
@@ -73,9 +73,9 @@ $id_estudiante = $_GET['id_estudiante'];
                                             $contador_reportes = $contador_reportes + 1; ?>
 
                                             <tr>
-                                                <td>
+                                                <!--  <td>
                                                     <center><?= $contador_reportes; ?></center>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <center><?= $nombre_materia; ?></center>
                                                 </td>
@@ -162,35 +162,7 @@ include('../../layout/mensajes.php');
             "responsive": true,
             "lengthChange": false,
             "autoWidth": false,
-            "buttons": [{
 
-                    extend: 'collection',
-                    text: 'Reportes',
-                    orientation: 'landscape',
-                    buttons: [{
-                        text: 'Copiar',
-                        extend: 'copy',
-                    }, {
-                        extend: 'pdf'
-                    }, {
-                        extend: 'csv'
-                    }, {
-                        extend: 'excel'
-                    }, {
-                        text: 'Imprimir',
-                        extend: 'print'
-
-                    }]
-
-                },
-                {
-                    extend: 'colvis',
-                    text: 'Visor de columnas',
-                    collectionLayout: 'fixed three-column'
-                }
-
-
-            ],
 
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     });

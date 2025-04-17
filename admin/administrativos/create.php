@@ -15,7 +15,7 @@ include('../../app/controllers/roles/listado_de_roles.php'); // incluye los dato
     <div class="content">
         <div class="container">
             <div class="row">
-                <div class="col-md-11 mx-auto">
+                <div class="col-md-12 mx-auto">
                     <h1>Creacion de un Nuevo Administrativo</h1>
                 </div>
             </div>

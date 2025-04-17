@@ -14,7 +14,7 @@ include('../../app/controllers/administrativos/listado_de_administrativos.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <div class="col-md-11 mx-auto">
+                <div class="col-md-12 mx-auto">
                     <h1>Listado del Personal Administrativos</h1>
                 </div>
             </div>
@@ -23,10 +23,10 @@ include('../../app/controllers/administrativos/listado_de_administrativos.php');
 
             <div class="row">
                 <br>
-                <div class="col-md-11 mx-auto">
+                <div class="col-md-12 mx-auto">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Administrativos Registrados</h3>
+                            <h3 class="card-title">Administrativos <br> Registrados</h3>
                             <div class="card-tools">
                                 <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Crear Nuevo Administrativo</a>
                             </div>

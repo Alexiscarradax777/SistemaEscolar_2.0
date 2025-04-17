@@ -36,11 +36,11 @@ foreach ($estudiantes as $estudiante) {
     <div class="content">
         <div class="container">
             <div class="row">
-                <div class="col-md-11 mx-auto">
-                    <h5>Alumno: <?= $apellidos . " " . $nombres; ?></h5>
-                    <h5>Num.Control: <?= $num_control; ?> </h5>
-                    <h5>Carrera: <?= $nivel; ?> Sistema: <?= $sistema; ?></h5>
-                    <h5>Curso: <?= $curso; ?> Grupo: <?= $grupo; ?></h5>
+                <div class="col-md-12 mx-auto">
+                    <h5><b>Alumno:</b> <?= $apellidos . " " . $nombres; ?></h5>
+                    <h5><b>Num.Control:</b> <?= $num_control; ?> </h5>
+                    <h5><b>Carrera:</b> <?= $nivel; ?> Sistema: <?= $sistema; ?></h5>
+                    <h5><b>Curso:</b> <?= $curso; ?> Grupo: <?= $grupo; ?></h5>
                 </div>
             </div>
             <br>
@@ -48,20 +48,17 @@ foreach ($estudiantes as $estudiante) {
 
 
             <div class="row">
-                <div class="col-md-11 mx-auto">
+                <div class="col-md-12 mx-auto">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Calificaciones Registradas</h3>
-
                         </div>
 
                         <div class="card-body">
-                            <table id="example1" class="table table-striped table-bordered table-hover table-sm mx-auto" style="width: 900px;">
+
+                            <table id="example1" class="table table-striped table-bordered table-hover table-sm">
                                 <thead>
                                     <tr>
-                                        <th>
-                                            <center>Nro</center>
-                                        </th>
 
                                         <th>
                                             <center>Materia</center>
@@ -97,9 +94,7 @@ foreach ($estudiantes as $estudiante) {
                                             $contador_calificaciones = $contador_calificaciones + 1; ?>
 
                                             <tr>
-                                                <td>
-                                                    <center><?= $contador_calificaciones; ?></center>
-                                                </td>
+
                                                 <td>
                                                     <center><?= $calificacione['nombre_materia']; ?></center>
                                                 </td>
@@ -123,6 +118,7 @@ foreach ($estudiantes as $estudiante) {
                                 </tbody>
 
                             </table>
+
 
                         </div>
 
@@ -162,7 +158,7 @@ include('../../layout/mensajes.php');
 <script>
     $(function() {
         $("#example1").DataTable({
-            "pageLength": 5,
+            "pageLength": 2,
             "language": {
                 "emptyTable": "No hay datos disponibles en la tabla",
                 "info": "Mostrando _START_ a _END_ de _TOTAL_ Calificaciones",
@@ -185,35 +181,7 @@ include('../../layout/mensajes.php');
             "responsive": true,
             "lengthChange": false,
             "autoWidth": false,
-            "buttons": [{
 
-                    extend: 'collection',
-                    text: 'Reportes',
-                    orientation: 'landscape',
-                    buttons: [{
-                        text: 'Copiar',
-                        extend: 'copy',
-                    }, {
-                        extend: 'pdf'
-                    }, {
-                        extend: 'csv'
-                    }, {
-                        extend: 'excel'
-                    }, {
-                        text: 'Imprimir',
-                        extend: 'print'
-
-                    }]
-
-                },
-                {
-                    extend: 'colvis',
-                    text: 'Visor de columnas',
-                    collectionLayout: 'fixed three-column'
-                }
-
-
-            ],
 
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     });
